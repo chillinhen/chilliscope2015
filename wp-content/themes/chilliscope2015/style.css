@@ -1,0 +1,12 @@
+@charset "UTF-8"; 
+/** 
+* Theme Name: chilliscope2015
+* Theme URI: http://www.chilliscope.de 
+* Description: Child theme ... 
+* Author: Claudia Hillen 
+* Author URI: http://www.chilliscope.de 
+* Template: twentyfifteen
+* Version: 0.1.0 
+
+*/ 
+@import url('../twentyfifteen/style.css');
