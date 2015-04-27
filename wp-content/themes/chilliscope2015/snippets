@@ -1,0 +1,11 @@
+/// Fonts
+
+<link href="//fonts.googleapis.com/css?family=Hind&subset=latin" rel="stylesheet" type="text/css">
+<style>
+* {
+ font-family: 'Hind', sans-serif;
+}
+</style>
+
+
+//icons

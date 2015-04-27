@@ -1,0 +1,18 @@
+/* line 1, ../scss/wip.scss */
+* {
+  font-family: 'Hind', sans-serif;
+}
+
+/* line 5, ../scss/wip.scss */
+#container {
+  border: 1px solid red;
+}
+/* line 8, ../scss/wip.scss */
+#container .item {
+  width: 300px;
+  padding: 0;
+  margin: 0;
+  color: red;
+  overflow: hidden;
+  /*        * {font-size:80%;}*/
+}
