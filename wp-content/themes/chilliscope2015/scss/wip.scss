@@ -6,11 +6,22 @@
 
     border:1px solid red;
     .item { 
-        width: 300px;
+        width: 450px;
         padding:0;
         margin:0;
         color:red;
         overflow:hidden;
 /*        * {font-size:80%;}*/
     }
+}
+
+/***Portfolio ***/
+.category-portfolio{
+    position: relative;
+    
+    .post-thumbnail{
+        margin:0;
+    }
+    .entry-header, .entry-content {display:none;}
+    
 }

@@ -9,10 +9,24 @@
 }
 /* line 8, ../scss/wip.scss */
 #container .item {
-  width: 300px;
+  width: 450px;
   padding: 0;
   margin: 0;
   color: red;
   overflow: hidden;
   /*        * {font-size:80%;}*/
+}
+
+/***Portfolio ***/
+/* line 19, ../scss/wip.scss */
+.category-portfolio {
+  position: relative;
+}
+/* line 22, ../scss/wip.scss */
+.category-portfolio .post-thumbnail {
+  margin: 0;
+}
+/* line 25, ../scss/wip.scss */
+.category-portfolio .entry-header, .category-portfolio .entry-content {
+  display: none;
 }

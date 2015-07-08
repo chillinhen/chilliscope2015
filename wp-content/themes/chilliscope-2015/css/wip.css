@@ -1,0 +1,268 @@
+/***Variables ***/
+/*** Colors ***/
+/*** Responsive Breakpoints ***/
+/*** Globals ***/
+.large-font-styling, blockquote p {
+  font-size: large;
+}
+
+pre, blockquote {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+blockquote cite {
+  font-size: smaller;
+  font-style: italic;
+}
+
+/*** masonry ***/
+body.category .wrapper > main > section > article {
+  width: 290px;
+  border: 1px solid red;
+  background: #eee;
+  margin: 5px;
+  /*    &:nth-child(3n) { width: 400px; }*/
+}
+
+body header {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  align-content: center;
+}
+@media screen and (max-width: 480px) {
+  body header {
+    flex-direction: column;
+  }
+}
+body header ul {
+  list-style: none;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding: 0;
+}
+@media screen and (max-width: 480px) {
+  body header ul {
+    flex-direction: column;
+  }
+}
+body header ul li {
+  justify-content: center;
+}
+body header hgroup {
+  border: 1px solid red;
+  display: flex;
+  display: -webkit-flex;
+  align-items: baseline;
+}
+body header hgroup h1 {
+  background: transparent url("../img/chilli-logo.svg") no-repeat left center;
+}
+@media screen and (min-width: 768px) {
+  body header hgroup h1 {
+    background-size: contain;
+  }
+}
+body header hgroup h1 a {
+  text-indent: -9999px;
+  display: block;
+  overflow: hidden;
+}
+body header nav {
+  border: 1px solid red;
+  font-size: 1.4em;
+  -webkit-flex: 1;
+  flex: 1;
+}
+body header nav > ul > li {
+  border: 1px solid green;
+  margin: 0 1em;
+  position: relative;
+}
+body header nav > ul > li > a {
+  display: block;
+  padding: 0 1em;
+}
+body header nav > ul > li .sub-menu {
+  display: none;
+}
+body header .contact {
+  border: 1px solid red;
+}
+body header .contact ul.social-links li a {
+  padding: 0 .2em;
+}
+body header .contact ul.social-links li a > span {
+  text-indent: -9999px;
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+}
+body header .contact ul.social-links li a:before {
+  font-family: 'FontAwesome';
+  content: "";
+  padding-right: 0;
+  opacity: 1;
+  margin-left: 0;
+  font-size: 2em;
+}
+body header .contact ul.social-links li a.xing:before {
+  content: '\f169';
+}
+body header .contact ul.social-links li a.linkedin:before {
+  content: '\f08c';
+}
+body header .contact ul.social-links li a.twitter:before {
+  content: '\f081';
+}
+body header .contact ul.social-links li a.skype:before {
+  content: '\f17e';
+}
+body header .contact ul.social-links li a.vcard {
+  /** ToDo make svg***/
+}
+body header .contact ul.social-links li a.vcard:before {
+  content: '\f1c6';
+}
+body header .contact ul.social-links li a.rss:before {
+  content: '\f143';
+}
+body main > section {
+  border: 1px solid blue;
+}
+body main > section:nth-child(2n) {
+  background: #eee;
+}
+body main > section.full-screen {
+  height: 100vh;
+  display: block;
+}
+body main #intro .content hgroup {
+  border: 1px solid blue;
+  display: flex;
+  display: -webkit-flex;
+}
+body main #intro .content hgroup h2 {
+  height: 100px;
+  width: 50%;
+  margin: auto;
+}
+body main #intro .content .me {
+  border: 1px solid green;
+  display: flex;
+  display: -webkit-flex;
+}
+body main #intro .content .me .text {
+  flex: 2;
+}
+body main #intro .content .me .contact {
+  flex: 1;
+}
+body main #frage {
+  background: transparent url("../img/dummyPics/garten.jpg") no-repeat center center;
+  background-size: cover;
+}
+body main #frage * {
+  color: white;
+}
+body main #frage .content h2, body main #frage .content ul {
+  width: 50vw;
+  margin: 2em auto;
+}
+body main #frage .content ul {
+  list-style: none;
+}
+body main #antwort {
+  display: flex;
+  display: -webkit-flex;
+  border: 1px solid pink;
+}
+body main #antwort p {
+  height: 200px;
+}
+body main #current-project article > section {
+  display: flex;
+  display: -webkit-flex;
+}
+body main #current-project article > section dl {
+  flex: 1;
+}
+body main #current-project article > section .content {
+  flex: 2;
+}
+body main #fav-projects .list {
+  display: flex;
+  display: -webkit-flex;
+}
+body main #contact section {
+  display: flex;
+  display: -webkit-flex;
+}
+body main #contact section form {
+  flex: 1;
+}
+body main #contact section form input {
+  display: block;
+}
+body main #contact section p {
+  flex: 2;
+}
+body main #contact section aside {
+  flex: 1;
+}
+body main #leistungen .caroufredsel_wrapper {
+  margin-left: 0 !important;
+}
+body main #leistungen #carousel {
+  /*    the HTML element that will be turned into a carousel */
+  width: 870px;
+  /*    depending on your situation */
+  height: 320px;
+  /*    depending on your situation */
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+body main #leistungen dl {
+  float: left;
+  display: inline-block;
+  width: 300px;
+  height: 200px;
+}
+body main #leistungen .control {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+}
+body main #leistungen .control.next {
+  right: 0;
+  left: auto;
+}
+body main #leistungen .pager {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}

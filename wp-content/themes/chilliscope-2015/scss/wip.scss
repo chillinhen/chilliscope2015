@@ -1,0 +1,322 @@
+/***Variables ***/
+/*** Colors ***/
+$foo:red;
+@mixin foobar ($color){
+    border:1px solid $color;
+}
+@mixin flex-container{
+    display:flex;
+    display:-webkit-flex;
+}
+@mixin icon-style ($cnt, $pd-ri, $op, $mg-le, $size) {
+    font-family: 'FontAwesome';
+    content: $cnt;
+    padding-right: $pd-ri;
+    opacity: $op;
+    margin-left:$mg-le;
+    font-size:$size;
+}
+@mixin full-screen($number){
+    height:$number;
+}
+
+/*** Responsive Breakpoints ***/
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+/*** Globals ***/
+.large-font-styling{
+    font-size: large;
+}
+ pre,blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    blockquote {
+        background: #f9f9f9;
+        border-left: 10px solid #ccc;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+        &:before {
+            color: #ccc;
+            content: open-quote;
+            font-size: 4em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+        }
+        p {
+            display: inline;
+             @extend .large-font-styling;
+        }
+        cite{
+            font-size: smaller;
+            font-style: italic;
+        }
+    }
+
+
+/*** masonry ***/
+body.category .wrapper > main > section > article { 
+    width: 290px; 
+    border:1px solid red;
+    background:#eee;
+    margin:5px;
+    /*    &:nth-child(3n) { width: 400px; }*/
+}
+html {
+
+}
+body {
+    header{
+        @include flex-container;
+        align-items:center;
+        align-content:center;
+        @media screen and (max-width: $screen-xs){
+            flex-direction: column;
+        }
+        ul {
+            list-style: none;
+            @include flex-container;
+            justify-content:space-between;
+            padding:0;
+            @media screen and (max-width: $screen-xs){
+                flex-direction: column;
+            }
+            li {
+                justify-content:center;
+            }
+        }
+        hgroup{
+            @include foobar(red);
+            @include flex-container;
+            align-items:baseline;
+
+            h1 {
+                background: transparent url('../img/chilli-logo.svg') no-repeat left center;
+                @media screen and (min-width:$screen-sm){
+                   background-size: contain;
+                }
+                a {
+                text-indent:-9999px;
+                display:block;
+                overflow:hidden;
+                }
+            }
+
+        }
+
+        nav {
+            @include foobar(red);
+            font-size:1.4em;
+            -webkit-flex:1;
+            flex:1;
+            > ul {
+                
+                > li {
+                    @include foobar(green);
+                    margin:0 1em;
+                    position:relative;
+                  
+                    > a {
+                        display: block;
+                        padding:0 1em;
+                    }
+                    .sub-menu{
+                        display: none; 
+                    }
+                }
+            }
+        }
+        .contact{
+            @include foobar(red);
+
+            ul.social-links{
+                li {
+                    
+                    a {
+                        padding:0 .2em;
+                        > span {
+                            text-indent:-9999px;
+                            display:inline-block;
+                            overflow:hidden;
+                            width: 0;
+                        }
+                        
+                        &:before{
+                            @include icon-style ('', 0, 1, 0, 2em);
+                            
+                        }
+                        &.xing{
+                            &:before{content:'\f169';}
+                        }
+                        &.linkedin{
+                            &:before{content:'\f08c';}
+                        }
+                        &.twitter{
+                            &:before{content:'\f081';}
+                        }
+                        &.skype{
+                            &:before{content:'\f17e';}
+                        }
+                        &.vcard{
+                            &:before{content:'\f1c6';}/** ToDo make svg***/
+                        }
+                        &.rss{
+                            &:before{content:'\f143';}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    main{
+        
+        > section{
+            @include foobar(blue);
+            &:nth-child(2n){
+                background: #eee;
+            }
+            
+            &.full-screen{
+               height:100vh;
+               display: block; 
+            }
+        }
+        #intro{
+            .content{
+                hgroup{
+                    @include foobar(blue);
+                    @include flex-container;
+                    h2{
+                        height:100px;
+                        width:50%;
+                        margin:auto;
+                    }
+                }
+                .me{
+                    @include foobar(green);
+                    @include flex-container;
+                    .text{
+                        flex:2;
+                    }
+                    .contact{
+                        flex:1;
+                    }
+                }
+            }
+        }
+        #frage {
+            background: transparent url('../img/dummyPics/garten.jpg') no-repeat center center;
+            background-size:cover;
+            *{
+                color:white;
+            }
+            .img-bg{
+
+            }
+            .content{
+                h2, ul{
+                    width:50vw;
+                    margin:2em auto;
+                }
+                ul {
+                    list-style: none;
+                }
+            }
+        }
+        #antwort{
+            @include flex-container;
+            @include foobar(pink);
+            p{
+                height:200px;
+            }
+        }
+        #current-project{
+            article{
+                > section{
+                    @include flex-container;
+                    dl{
+                        flex:1;
+                    }
+                    .content{
+                        flex:2;
+                    }
+                }
+            }
+        }
+        #fav-projects{
+            .list{
+               @include flex-container;
+            }
+        }
+        #recommends{
+            blockquote{
+
+            }
+        }
+        #contact{
+            section{
+                @include flex-container;
+                form{
+                    input{
+                        display: block;
+                    }
+                    flex:1;
+                }
+                p{
+                    flex:2;
+                }
+                aside{
+                    flex:1;
+                }
+            }
+        }
+        #leistungen{
+            .caroufredsel_wrapper{
+                margin-left: 0 !important;
+            }
+                    //Carousel
+        #carousel {                /*    the HTML element that will be turned into a carousel */
+            width: 870px;        /*    depending on your situation */
+            height: 320px;        /*    depending on your situation */
+            overflow: hidden;
+            margin:0 auto;
+            position: relative;
+        }
+            dl{
+                float: left;
+                display: inline-block;
+                width:300px;
+                height:200px;
+            }
+            .control{
+                position: absolute;
+                bottom:0;
+                left:0;
+                z-index:20;
+                &.next{
+                    right:0;
+                    left:auto;
+                }
+            }
+            .pager{
+                position: absolute;
+                bottom:0;
+                left:0;
+                width: 100%;
+                z-index: 10;
+                
+            }
+            
+        }
+
+    }
+
+
+}
+
